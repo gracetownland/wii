@@ -1,0 +1,9 @@
+/* LandingPage.css */
+.LandingPage {
+  text-align: center;
+  padding: 20px;
+}
+
+.LandingPage-header {
+  font-size: 1.5em;
+}
