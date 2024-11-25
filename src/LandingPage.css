@@ -5,5 +5,26 @@
 }
 
 .LandingPage-header {
+  font-size: 7em;
+  font-family: 'Kage';
+  color: yellow;
+font-weight: 100;
+letter-spacing: 4px;
+line-height:0.8;
+}
+
+
+.LandingPage-body {
   font-size: 1.5em;
+  color: yellow;
+}
+
+
+.backgroundImage{
+  height: 100vh; /* Make the container span the full height of the viewport */
+  width: 100vw; /*Make the container span the full width of the viewport*/
+  background-size: cover; /* Ensure the background image covers the entire container */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Prevent tiling of the image */
+
 }

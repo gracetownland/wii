@@ -1,0 +1,22 @@
+.AboutMe {
+  height: 100vh; /* Full viewport height */
+  width: 100%; /* Full width */
+  background-color: #262626; /* Set background color */
+  color: white; /* White text for better contrast */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.AboutMe h2 {
+  font-size: 3em; /* Larger font size for the heading */
+  margin-bottom: 20px;
+}
+
+.AboutMe p {
+  font-size: 1.2em; /* Slightly larger font for the paragraph */
+  max-width: 800px; /* Limit the width of text */
+  text-align: center;
+}
