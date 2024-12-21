@@ -1,5 +1,10 @@
 .App {
   text-align: center;
+  height: 100vh; /* Make the container span the full height of the viewport */
+  width: 100vw; /*Make the container span the full width of the viewport*/
+  background-size: cover; /* Ensure the background image covers the entire container */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Prevent tiling of the image */
 }
 
 .App-logo {
@@ -7,11 +12,7 @@
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+
 
 .App-header {
   background-color: #282c34;
@@ -28,11 +29,11 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+@font-face {
+  font-family: 'Kage';
+  src: url('./../public/fonts/kage1.woff') format('woff'),
+ url('./../public/fonts/kage2.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
 }

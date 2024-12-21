@@ -3,13 +3,15 @@ import './LandingPage.css'; // Create this CSS file for specific styling
 import background from './img/SiyaDwivedi.png'
 function LandingPage() {
   return (
-    <div className="LandingPage" style={{backgroundImage: `url(${background})`}}>
-      </div>
-      <div>
+    <div className='backgroundImage' style={{backgroundImage: `url(${background})`}}>
+    <div className="LandingPage">
       <header className="LandingPage-header">
-        <h1>Welcome to the Landing Page</h1>
-        <p>This is the landing page of your application.</p>
+        <h1>SIYA<br></br> DWI</h1>
       </header>
+      <div className='LandingPage-body'>
+        <p>Welcome to my corner of the internet :)</p>
+      </div>
+    </div>
     </div>
   );
 }
