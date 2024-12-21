@@ -1,0 +1,42 @@
+.AboutMe {
+  height: 100vh; /* Full viewport height */
+  width: 100%; /* Full width */
+  background-color: #262626; /* Set background color */
+  color: white; /* White text for better contrast */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: yellow;
+}
+
+.AboutMe h2 {
+  font-size: 3em; /* Larger font size for the heading */
+  margin-bottom: 20px;
+}
+
+.heading{
+  font-family: 'Playfair Display';
+  font-weight: 100;
+}
+
+.name{
+  font-family: 'Playfair Display';
+  font-style: italic;
+  font-weight: 100;
+}
+
+.AboutMe p {
+  font-size: 1.2em; /* Slightly larger font for the paragraph */
+  max-width: 800px; /* Limit the width of text */
+  text-align: center;
+}
+
+.backgroundImage{
+  height: 100vh; /* Make the container span the full height of the viewport */
+  width: 100vw; /*Make the container span the full width of the viewport*/
+  background-size: cover; /* Ensure the background image covers the entire container */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Prevent tiling of the image */
+
+}
