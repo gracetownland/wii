@@ -3,27 +3,20 @@ import './NavBar.css'
 function NavBar(){
     return (
 <nav className="NavBar">
-                        <a href="/#work" className="nava">
-                            Work
+                        <a href="/#Blog" className="nava">
+                            Blog
                         </a>
-                        <a href="/#projects" className="nava">
-                            Projects
+                        <a href="/#ReachOut" className="nava">
+                            Reach Out
                         </a>
-                        <a href="/#research" className="nava">
-                            Research
+                        <a href="/#TinyMango" className="nava">
+                            Tiny Mango
                         </a>
-                        <a href="/">
-                            <>aaa</>
-                        </a>
+                        
                         <a href="/#about" className="nava">
-                            About
+                            About Me
                         </a>
-                        <a href="/#contact" className="nava">
-                            Contact
-                        </a>
-                        <a href="/Icons" className="nava">
-                            Icons
-                        </a>
+                
                     </nav>
     )
 }

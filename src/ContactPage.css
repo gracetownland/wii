@@ -38,5 +38,5 @@
   background-size: cover; /* Ensure the background image covers the entire container */
   background-position: center; /* Center the background image */
   background-repeat: no-repeat; /* Prevent tiling of the image */
-
+  background-color: transparent;
 }
