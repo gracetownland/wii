@@ -9,6 +9,7 @@
   text-transform: uppercase; /* Uppercase text for clean look */
   letter-spacing: 2px; /* Add spacing between letters */
   color: yellow; /* Yellow color matching the design */
+  scroll-behavior: smooth;
 }
 
 .nava {

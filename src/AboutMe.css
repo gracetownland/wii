@@ -1,7 +1,8 @@
 .AboutMe {
   display: flex; /* Use flexbox for layout */
-  justify-content: space-between; /* Space out left and right sections */
-  align-items: center; /* Align items vertically */
+  flex-direction: row;
+  justify-content: flex-start; /* Space out left and right sections */
+  align-items: stretch; /* Align items vertically */
   height: 100vh; /* Full viewport height */
   width: 100%; /* Full width */
   background-color: #262626; /* Set background color */
@@ -10,15 +11,25 @@
   box-sizing: border-box; /* Include padding in width/height calculations */
 }
 
-
-.leftSide{
-  flex: 1;
-
+.leftSide {
+  flex: 1; /* Make the left side take equal space */
+  display: flex; /* Ensure children align properly if needed */
+  width: max-content;
+  flex-direction: column; /* Align content in a column inside the left side */
+  justify-content: center; /* Vertically center content */
+  align-items: flex-start; /* Align content to the left */
 }
-.rightSide{
-  flex: 1;
-  
+
+.rightSide {
+ font-family: 'Playfair Display', serif;
+  flex: 1; /* Make the right side take equal space */
+  display: flex; /* Ensure children align properly if needed */
+  width: max-content;
+  flex-direction: column; /* Align content in a column inside the right side */
+  justify-content: center; /* Vertically center content */
+  align-items: flex-end; /* Align content to the right */
 }
+
 .AboutMe h2 {
   font-size: 3em; /* Larger font size for the heading */
   margin-bottom: 20px;

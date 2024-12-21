@@ -1,4 +1,4 @@
-.AboutMe {
+.QuotePage {
   height: 100vh; /* Full viewport height */
   width: 100%; /* Full width */
   background-color: #262626; /* Set background color */
@@ -10,7 +10,7 @@
   color: yellow;
 }
 
-.AboutMe h2 {
+.QuotePage h2 {
   font-size: 3em; /* Larger font size for the heading */
   margin-bottom: 20px;
 }
