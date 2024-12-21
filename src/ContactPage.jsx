@@ -8,7 +8,7 @@ function ContactPage() {
     <div id='ReachOut' className='backgroundImage' style={{backgroundImage: `url(${background})`}}>
 
 
-      <p>TODO.</p>
+      
       </div>
 
   );
