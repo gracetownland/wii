@@ -1,6 +1,6 @@
 import React from 'react';
 import './ContactPage.css'; // Create this CSS file for specific styling
-import background from './img/SiyaDwivedi.png'
+import background from './img/ContactPage.jpg'
 
 function ContactPage() {
   return (

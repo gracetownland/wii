@@ -1,6 +1,7 @@
 import React from 'react';
 import './LandingPage.css'; // Create this CSS file for specific styling
 import background from './img/SiyaDwivedi.png'
+import NavBar from './NavBar'
 function LandingPage() {
   return (
     <div className='backgroundImage' style={{backgroundImage: `url(${background})`}}>
@@ -12,6 +13,7 @@ function LandingPage() {
         <p>Welcome to my corner of the internet :)</p>
       </div>
     </div>
+    <NavBar/>
     </div>
   );
 }
