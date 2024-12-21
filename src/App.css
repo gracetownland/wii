@@ -5,6 +5,7 @@
   background-size: cover; /* Ensure the background image covers the entire container */
   background-position: center; /* Center the background image */
   background-repeat: no-repeat; /* Prevent tiling of the image */
+  background-color: transparent;
 }
 
 .App-logo {
@@ -15,7 +16,7 @@
 
 
 .App-header {
-  background-color: #282c34;
+  background-color: transparent;
   min-height: 100vh;
   display: flex;
   flex-direction: column;

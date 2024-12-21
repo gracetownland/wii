@@ -1,4 +1,3 @@
-/* LandingPage.css */
 .LandingPage {
   text-align: center;
   padding: 20px;
@@ -8,24 +7,29 @@
   font-size: 7em;
   font-family: 'Kage';
   color: yellow;
-font-weight: 100;
-letter-spacing: 4px;
-line-height:0.8;
+  font-weight: 100;
+  letter-spacing: 4px;
+  line-height: 0.8;
 }
-
 
 .LandingPage-body {
   font-size: 1.5em;
   color: yellow;
 }
 
+.backgroundImage {
+  position: relative; /* Required for positioning the shadow */
+  height: 100vh;
+  width: 100vw;
+  background-image: url('./img/SiyaDwivedi.png');
+  background-size: cover;
+  background-position: center;
 
+  /* Add the box-shadow overlay */
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.318); /* Creates a dark overlay */
+}
 
-.backgroundImage{
-  height: 100vh; /* Make the container span the full height of the viewport */
-  width: 100vw; /*Make the container span the full width of the viewport*/
-  background-size: cover; /* Ensure the background image covers the entire container */
-  background-position: center; /* Center the background image */
-  background-repeat: no-repeat; /* Prevent tiling of the image */
-
+.LandingPage {
+  position: relative;
+  z-index: 1; /* Ensures content is above the box-shadow overlay */
 }
