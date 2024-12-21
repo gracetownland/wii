@@ -21,11 +21,27 @@ line-height:0.8;
 
 
 
-.backgroundImage{
-  height: 100vh; /* Make the container span the full height of the viewport */
-  width: 100vw; /*Make the container span the full width of the viewport*/
-  background-size: cover; /* Ensure the background image covers the entire container */
-  background-position: center; /* Center the background image */
-  background-repeat: no-repeat; /* Prevent tiling of the image */
+.backgroundImage {
+  position: relative; /* Required for positioning the overlay */
+  height: 100vh;
+  width: 100vw;
+  background-image: url('./img/SiyaDwivedi.png');
+  background-size: cover;
+  background-position: center;
+}
 
+.backgroundImage::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+  z-index: 1; /* Ensures the overlay is above the background but below the content */
+}
+
+.LandingPage {
+  position: relative;
+  z-index: 2; /* Places content above the overlay */
 }

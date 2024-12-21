@@ -6,7 +6,7 @@ function LandingPage() {
     <div className='backgroundImage' style={{backgroundImage: `url(${background})`}}>
     <div className="LandingPage">
       <header className="LandingPage-header">
-        <h1>SIYA<br></br> DWI</h1>
+        <h1>SIYA<br></br> DWIVEDI</h1>
       </header>
       <div className='LandingPage-body'>
         <p>Welcome to my corner of the internet :)</p>
