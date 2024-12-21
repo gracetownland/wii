@@ -4,7 +4,7 @@ import portfolio from './img/portfolio.jpg'
 import portfolio1 from './img/portfolio1.png'
 function AboutMe() {
   return (
-    <div className="AboutMe">
+    <div id="AboutMe" className="AboutMe">
       <div className = "leftSide">
       <h2 className = "heading">Get to Know </h2>
       <h2 className="name">Siya</h2>

@@ -4,13 +4,13 @@ import background from './img/ContactPage.jpg'
 
 function ContactPage() {
   return (
-    <div className="AboutMe">
-    <div className='backgroundImage' style={{backgroundImage: `url(${background})`}}>
+
+    <div id='ReachOut' className='backgroundImage' style={{backgroundImage: `url(${background})`}}>
 
 
       <p>TODO.</p>
       </div>
-    </div>
+
   );
 }
 

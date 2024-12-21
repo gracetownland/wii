@@ -3,18 +3,17 @@ import './NavBar.css'
 function NavBar(){
     return (
 <nav className="NavBar">
-                        <a href="/#Blog" className="nava">
-                            Blog
-                        </a>
-                        <a href="/#ReachOut" className="nava">
-                            Reach Out
-                        </a>
-                        <a href="/#TinyMango" className="nava">
+                        <a href="https://www.instagram.com/tinymangoshop/" className="nava">
                             Tiny Mango
                         </a>
-                        
-                        <a href="/#about" className="nava">
+                        <a href="#ReachOut" className="nava">
+                            Reach Out
+                        </a>
+                        <a href="#AboutMe" className="nava">
                             About Me
+                        </a>
+                        <a href="https://moonlitmirage.home.blog/" className="nava">
+                            Moonlit Mirage
                         </a>
                 
                     </nav>
