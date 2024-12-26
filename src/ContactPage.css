@@ -22,7 +22,7 @@
 
 .contactForm {
   display: flex;
-  justify-content: space-between; /* Space between items horizontally */
+  justify-content: center; /* Space between items horizontally */
   align-items: center;
   flex-wrap: wrap; /* Wrap items to the next line if necessary */
   width: 80%; /* Adjust width of the form */
@@ -49,9 +49,9 @@
   width: 80%; /* Input takes 80% of its container width */
   padding: 10px; /* Add padding for a better user experience */
   font-size: 1em;
-  border: 2px solid yellow; /* Border matches theme */
+  border: 2px solid white; /* Border matches theme */
   background: transparent; /* Transparent background */
-  color: white; /* Text color */
+  color: yellow; /* Text color */
   border-radius: 5px; /* Rounded corners */
 }
 
