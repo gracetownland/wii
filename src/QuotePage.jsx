@@ -1,17 +1,15 @@
 import React from 'react';
-import './ContactPage.css'; // Create this CSS file for specific styling
-import background from './img/Quote.jpg'
+import './QuotePage.css'; // Create this CSS file for specific styling
+import background from './img/Quote.jpg';
 
-function ContactPage() {
+function QuotePage() {
   return (
-    <div className="AboutMe">
-    <div className='backgroundImage' style={{backgroundImage: `url(${background})`}}>
-
-
-      <p>TODO.</p>
+    <div className="QuotePage">
+      <div className='quoteImage' style={{ backgroundImage: `url(${background})` }}>
+        <div className='MainQuote'>What is more liberating than creating art about instances that take place in our lives?</div>
       </div>
     </div>
   );
 }
 
-export default ContactPage;
+export default QuotePage;
