@@ -7,46 +7,91 @@
   width: 100%; /* Full width */
   background-color: #262626; /* Set background color */
   color: yellow; /* White text for better contrast */
-  padding: 50px; /* Add padding around the content */
+  padding-left: 50px; /* Add padding around the content */
+  padding-right:50px;
   box-sizing: border-box; /* Include padding in width/height calculations */
 }
-
+.text {
+  display: flex;
+  flex:1;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-bottom: 10%;
+  margin-top: 40%;
+  font-size: 1.8em;
+}
 .leftSide {
   flex: 1; /* Make the left side take equal space */
   display: flex; /* Ensure children align properly if needed */
-  width: max-content;
   flex-direction: column; /* Align content in a column inside the left side */
-  justify-content: center; /* Vertically center content */
   align-items: flex-start; /* Align content to the left */
+  width: max-content;
+  margin-right: 20px;
+  padding-right: 10%;
+  justify-content: center; /* Vertically center content */
+}
+.leftImage {
+  flex: 2; /* Takes up 2/3 of the leftSide space */
+  display: flex; /* Flex container for alignment */
+  justify-content: center; /* Center the image horizontally */
+  align-items: center; /* Center the image vertically */
 }
 
+.leftImage img {
+  width: 100%; /* Adjust image width */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensures the image covers the div without distortion */
+  max-height: 100%; /* Prevents the image from exceeding the height of the container */
+  margin-bottom: 40%; /* Add spacing below the image */
+}
 .rightSide {
  font-family: 'Playfair Display', serif;
-  flex: 1; /* Make the right side take equal space */
+   margin-top: 0%;
+  margin-bottom: 0%;
+  flex: 0.7; /* Make the right side take equal space */
   display: flex; /* Ensure children align properly if needed */
   width: max-content;
   flex-direction: column; /* Align content in a column inside the right side */
   justify-content: center; /* Vertically center content */
   align-items: flex-end; /* Align content to the right */
 }
-
+.rightSide img {
+  width: 100%; /* Make the image take up the full width of the container */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensures the image covers the div without distortion */
+  max-height: 100%; /* Prevents it from exceeding the height of the div */
+}
 .AboutMe h2 {
   font-size: 3em; /* Larger font size for the heading */
-  margin-bottom: 20px;
 }
 
 .heading{
+  margin-top: 0%;
+  margin-bottom: 0%;
+  letter-spacing: -3.0px;
   font-family: 'Playfair Display';
   font-weight: 100;
+  font-size: 4em; 
+  /*line-height: 0.5;*/
 }
 
-.name{
+.Myname{
+  margin-top: 0%;
+  margin-bottom: 0%;
   font-family: 'Playfair Display';
   font-style: italic;
   font-weight: 100;
+  text-align: left;
+  font-size: 5em; 
+  /*line-height: 1;*/
 }
 
-.AboutMe p {
-  font-size: 1.2em; /* Slightly larger font for the paragraph */
-  max-width: 800px; /* Limit the width of text */
+.AboutMe .bodyText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1.9em; /* Slightly larger font for the paragraph */
+  max-width: 700px; /* Limit the width of text */
+
 }
