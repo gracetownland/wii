@@ -1,3 +1,4 @@
+/* ContactPage.css */
 .ContactPage {
   height: 100vh; /* Full viewport height */
   width: 100%; /* Full width */
@@ -7,7 +8,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: yellow;
 }
 
 .Contact h2 {
@@ -15,12 +15,12 @@
   margin-bottom: 20px;
 }
 
-.heading{
+.heading {
   font-family: 'Playfair Display';
   font-weight: 100;
 }
 
-.name{
+.name {
   font-family: 'Playfair Display';
   font-style: italic;
   font-weight: 100;
@@ -32,9 +32,18 @@
   text-align: center;
 }
 
-.backgroundImage{
+.titleCard{
+  font-size: 7em;
+  font-family: 'Kage';
+  color: yellow;
+  font-weight: 100;
+  letter-spacing: 4px;
+  line-height: 0.8;
+}
+
+.backgroundImage {
   height: 100vh; /* Make the container span the full height of the viewport */
-  width: 100vw; /*Make the container span the full width of the viewport*/
+  width: 100vw; /* Make the container span the full width of the viewport */
   background-size: cover; /* Ensure the background image covers the entire container */
   background-position: center; /* Center the background image */
   background-repeat: no-repeat; /* Prevent tiling of the image */

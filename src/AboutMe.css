@@ -7,7 +7,8 @@
   width: 100%; /* Full width */
   background-color: #262626; /* Set background color */
   color: yellow; /* White text for better contrast */
-  padding: 50px; /* Add padding around the content */
+  padding-left: 50px; /* Add padding around the content */
+  padding-right:50px;
   box-sizing: border-box; /* Include padding in width/height calculations */
 }
 .text {
@@ -71,7 +72,7 @@
   font-family: 'Playfair Display';
   font-weight: 100;
   font-size: 4em; 
-  line-height: 0.5;
+  /*line-height: 0.5;*/
 }
 
 .Myname{
@@ -82,7 +83,7 @@
   font-weight: 100;
   text-align: left;
   font-size: 5em; 
-  line-height: 1;
+  /*line-height: 1;*/
 }
 
 .AboutMe .bodyText {
