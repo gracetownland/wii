@@ -14,16 +14,32 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 function Root() {
   useEffect(() => {
     const handleScroll = (event) => {
-      event.preventDefault();
-      const direction = event.deltaY > 0 ? 1 : -1;
+      let direction;
+      if (event.type === 'wheel') {
+        event.preventDefault();
+        direction = event.deltaY > 0 ? 1 : -1;
+      } else if (event.type === 'keydown') {
+        if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+          event.preventDefault();
+          direction = event.key === 'ArrowDown' ? 1 : -1;
+        } else {
+          return;
+        }
+      } else {
+        return;
+      }
+
       const scrollAmount = window.innerHeight * direction; // Scroll by the height of the viewport
       gsap.to(window, { scrollTo: { y: window.scrollY + scrollAmount, autoKill: false }, duration: 2.0, ease: "power1.inOut" });
     };
 
-window.addEventListener("wheel", handleScroll, { passive: false });
+    window.addEventListener('wheel', handleScroll, { passive: false });
+    window.addEventListener('keydown', handleScroll);
 
     return () => {
-window.removeEventListener('wheel', handleScroll, { passive: false });    };
+      window.removeEventListener('wheel', handleScroll, { passive: false });
+      window.removeEventListener('keydown', handleScroll);
+    };
   }, []);
 
   return <App />;
