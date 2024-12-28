@@ -6,110 +6,83 @@
   background-repeat: no-repeat; /* Prevent tiling */
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Vertically center content */
-  align-items: center; /* Horizontally center content */
+  justify-content: flex-end; /* Push content to the bottom */
+  align-items: flex-start; /* Align content to the left */
   color: white;
+  padding: 60px; /* Increase padding for spacing from edges */
+  box-sizing: border-box; /* Include padding in size calculations */
 }
 
 .titleCard {
-  font-size: 5em; /* Adjust title font size for responsiveness */
+  font-size: 4em; /* Larger title font size */
   font-family: 'Kage';
   color: yellow;
   font-weight: bold;
-  margin-bottom: 30px;
-  text-align: center;
+  margin-bottom: 40px; /* More space between title and form */
+  text-align: left; /* Align text to the left */
 }
 
 @media (min-width: 768px) {
   .titleCard {
-    font-size: 10em; /* Larger title on medium screens */
-  }
-}
-
-@media (min-width: 1024px) {
-  .titleCard {
-    font-size: 20em; /* Larger title on large screens */
+    font-size: 6em; /* Larger title on medium screens */
   }
 }
 
 .contactForm {
   display: flex;
-  justify-content: center; /* Space between items horizontally */
-  align-items: center;
-  flex-wrap: wrap; /* Wrap items to the next line if necessary */
-  width: 90%; /* Adjust width of the form */
-  max-width: 1000px; /* Prevent the form from growing too large */
-  margin-top: 20px;
+  flex-direction: column; /* Stack items vertically */
+  align-items: flex-start; /* Align items to the left */
+  width: 100%; /* Take up full width */
+  max-width: 700px; /* Increase form width */
 }
 
 .formRow {
-  flex: 1 1 100%; /* Each row takes up 100% of available space on small screens */
-  display: flex;
-  flex-direction: column; /* Stack label and input vertically */
-  align-items: center; /* Center items horizontally */
-  margin: 10px; /* Add space between rows */
-}
-
-@media (min-width: 768px) {
-  .formRow {
-    flex: 1 1 45%; /* Each row takes up 45% of available space on medium screens */
-  }
-}
-
-@media (min-width: 1024px) {
-  .formRow {
-    flex: 1 1 30%; /* Each row takes up 30% of available space on large screens */
-  }
+  width: 100%; /* Each row takes up full width of the form */
+  margin-bottom: 20px; /* Add spacing between rows */
 }
 
 .formLabel {
-  font-size: 1em; /* Adjust label font size for responsiveness */
+  font-size: 1.5em; /* Larger label font size */
   color: yellow;
   margin-bottom: 10px; /* Space between label and input */
 }
 
-@media (min-width: 768px) {
-  .formLabel {
-    font-size: 1.2em; /* Larger label font size on medium screens */
-  }
-}
-
 .formInput,
 .formTextarea {
-  width: 80%; /* Input takes 80% of its container width */
-  padding: 10px; /* Add padding for a better user experience */
-  font-size: 1em;
+  width: 100%; /* Input takes full width of the form */
+  padding: 15px; /* Increase padding for better appearance */
+  font-size: 1.2em; /* Increase input font size */
   border: 2px solid white; /* Border matches theme */
   background: transparent; /* Transparent background */
   color: yellow; /* Text color */
   border-radius: 5px; /* Rounded corners */
+  box-sizing: border-box; /* Include padding and border in width calculations */
 }
 
 .formTextarea {
-  height: 50px; /* Set height for textarea */
+  height: 80px; /* Increase height for textarea */
   resize: none; /* Prevent resizing */
 }
 
 .submitButton {
-  flex: 1 1 100%; /* Button takes full width */
-  max-width: 200px; /* Prevent button from being too large */
-  padding: 10px 20px; /* Add padding */
-  font-size: 1em; /* Adjust button font size for responsiveness */
+  width: auto; /* Button size based on content */
+  padding: 15px 30px; /* Add more padding */
+  font-size: 1.2em; /* Increase button font size */
   color: black;
   background-color: yellow; /* Button color */
   border: none;
   border-radius: 5px;
   cursor: pointer;
-}
-
-@media (min-width: 768px) {
-  .submitButton {
-    font-size: 1.2em; /* Larger button font size on medium screens */
-  }
+  margin-top: 20px; /* Add spacing above the button */
 }
 
 .submitButton:hover {
   background-color: white;
   color: black;
   border: 2px solid yellow;
+}
+.titleCard a {
+  text-decoration: none; /* Remove underline */
+  color: yellow; /* Ensure the text color matches your design */
+  outline: none; /* Remove the focus outline */
 }
