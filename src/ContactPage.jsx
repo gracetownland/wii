@@ -4,6 +4,7 @@ import './ContactPage.css'; // Create this CSS file for specific styling
 import background from './img/Quote.jpg';
 
 function ContactPage() {
+
   // State variables to store form values
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
