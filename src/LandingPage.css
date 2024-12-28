@@ -6,7 +6,7 @@
 }
 
 .LandingPage-header {
-  font-size: 7em;
+  font-size: 4em;
   font-family: 'Kage';
   color: yellow;
   font-weight: 100;
@@ -51,4 +51,25 @@
 .NavBar {
   position: relative;
   z-index: 3; /* Ensures the navigation bar is above the overlay and content */
+}
+
+/* Media Queries for Responsiveness */
+@media (min-width: 768px) {
+  .LandingPage-header {
+    font-size: 5em;
+  }
+
+  .LandingPage-body {
+    font-size: 1.75em;
+  }
+}
+
+@media (min-width: 1024px) {
+  .LandingPage-header {
+    font-size: 7em;
+  }
+
+  .LandingPage-body {
+    font-size: 2em;
+  }
 }
