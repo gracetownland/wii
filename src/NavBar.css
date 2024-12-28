@@ -2,14 +2,23 @@
   display: flex;
   justify-content: center; /* Center the items horizontally */
   align-items: center; /* Align the items vertically */
-  gap: 20px; /* Add space between the items */
+  gap: 10px; /* Add space between the items */
   font-family: 'Playfair Display', serif; /* Elegant font */
-  font-size: 1.2rem; /* Text size */
+  font-size: 1rem; /* Text size */
   font-weight: 400; /* Moderate font weight */
   text-transform: uppercase; /* Uppercase text for clean look */
-  letter-spacing: 2px; /* Add spacing between letters */
+  letter-spacing: 1px; /* Add spacing between letters */
   color: yellow; /* Yellow color matching the design */
   scroll-behavior: smooth;
+  padding: 10px; /* Add padding for better spacing */
+}
+
+@media (min-width: 768px) {
+  .NavBar {
+    gap: 20px; /* Increase gap between items on medium screens */
+    font-size: 1.2rem; /* Increase font size on medium screens */
+    letter-spacing: 2px; /* Increase letter spacing on medium screens */
+  }
 }
 
 .nava {
@@ -34,4 +43,18 @@
 .nava:hover {
   color: #ffffff; /* Change color to white on hover */
   transform: scale(1.1); /* Slightly enlarge text on hover */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .NavBar {
+    flex-direction: column; /* Stack items vertically on small screens */
+    gap: 10px; /* Reduce gap between items on small screens */
+    font-size: 1rem; /* Adjust font size for small screens */
+    letter-spacing: 1px; /* Adjust letter spacing for small screens */
+  }
+
+  .nava::after {
+    right: -10px; /* Adjust position of the line on small screens */
+  }
 }
