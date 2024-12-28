@@ -131,3 +131,44 @@
     font-size: 1.9em; /* Slightly larger font for the paragraph on medium and larger screens */
   }
 }
+
+.hoverContainer {
+  display: flex;
+  align-items: center; /* Align items vertically */
+    gap: 10px;
+}
+
+.MynameContainer {
+  display: flex;
+  align-items: center; /* Align the text and duckling on the same line */
+  gap: 10px; /* Add spacing between Siya and the duckling */
+  position: relative; /* Needed for the hover effect */
+}
+
+.duckling {
+  opacity: 0; /* Initially hidden */
+  transform: translateX(-10px); /* Slightly move the duckling to the left */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+.MynameContainer:hover .duckling {
+  opacity: 1; /* Show the duckling on hover */
+  transform: translateX(0); /* Bring it into position */
+}
+
+.heading,
+.Myname {
+  margin: 0;
+  padding: 0;
+  display: inline-block; /* Ensure items flow inline */
+}
+
+.Myname {
+  font-size: 4em; /* Adjust the font size */
+}
+
+@media (min-width: 768px) {
+  .Myname {
+    font-size: 5em; /* Larger font size on medium and larger screens */
+  }
+}
