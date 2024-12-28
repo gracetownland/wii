@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import emailjs from 'emailjs-com';
 import './ContactPage.css'; // Create this CSS file for specific styling
 import background from './img/Quote.jpg';
@@ -28,6 +28,27 @@ function ContactPage() {
         }
       );
   };
+
+  // Auto-resize textarea
+  useEffect(() => {
+    const textareas = document.querySelectorAll('.formTextarea');
+
+    textareas.forEach(textarea => {
+      textarea.addEventListener('input', function() {
+        this.style.height = 'auto';
+        this.style.height = (this.scrollHeight) + 'px';
+      });
+    });
+
+    return () => {
+      textareas.forEach(textarea => {
+        textarea.removeEventListener('input', function() {
+          this.style.height = 'auto';
+          this.style.height = (this.scrollHeight) + 'px';
+        });
+      });
+    };
+  }, []);
 
   return (
     <div
