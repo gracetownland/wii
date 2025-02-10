@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import emailjs from 'emailjs-com';
 import './ContactPage.css'; // Create this CSS file for specific styling
-import background from './img/Quote.jpg';
+import background from './img/sunset.JPG';
 
 function ContactPage() {
   // State variables to store form values

@@ -25,8 +25,8 @@ function AboutMe() {
         <div>
           <img src={portfolio} alt="pretty siya smiling" />
           <p className="bodyText">
-            Siya is an UBC Alumnus and the owner of Tiny Mango Shop, where she
-            sells handmade jewellery and crocheted items. She loves Kathak,
+            I am an Alumnus of UBC and the owner of Tiny Mango Shop, where I
+            sell handmade jewellery and crocheted items. I love Kathak,
             Khalid, Coldplay and momos.
           </p>
         </div>

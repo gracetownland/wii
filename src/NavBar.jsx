@@ -32,14 +32,14 @@ function NavBar() {
       <a href="https://www.instagram.com/tinymangoshop/" className="nava">
         Tiny Mango
       </a>
-      <a href="#ReachOut" className="nava">
-        Reach Out
+      <a href="https://moonlitmirage.home.blog/" className="nava">
+        Moonlit Mirage
       </a>
       <a href="#AboutMe" className="nava">
         About Me
       </a>
-      <a href="https://moonlitmirage.home.blog/" className="nava">
-        Moonlit Mirage
+      <a href="#ReachOut" className="nava">
+        Reach Out
       </a>
     </nav>
   );
