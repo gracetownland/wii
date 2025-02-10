@@ -73,3 +73,13 @@
     font-size: 2em;
   }
 }
+.siya-link {
+  color: yellow;               /* Matches the header color */
+  text-decoration: none;       /* Removes the underline */
+  transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.siya-link:hover {
+  color: #ff1493;              /* Pink hover color for contrast */
+  cursor: pointer;             /* Changes cursor to pointer */
+}
