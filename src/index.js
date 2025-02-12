@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
-import { Analytics } from "@vercel/analytics/react"
+
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
