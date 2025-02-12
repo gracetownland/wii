@@ -1,19 +1,33 @@
 import './App.css';
 import LandingPage from './LandingPage';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import AboutMe from './AboutMe';
 import ContactPage from './ContactPage';
-import QuotePage from './QuotePage';
+import Valentine from './valentine';  // ✅ Import the Valentine component
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
-      <LandingPage />
-      <AboutMe />
-      <ContactPage />
+      <Router>
+        <Routes>
+          {/* ✅ Default Route */}
+          <Route
+            path="/"
+            element={
+              <>
+                <LandingPage />
+                <AboutMe />
+                <ContactPage />
+              </>
+            }
+          />
+
+          {/* ✅ Valentine Route */}
+          <Route path="/valentine" element={<Valentine />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
 
 export default App;
-

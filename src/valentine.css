@@ -7,6 +7,8 @@
   background-color: #ffe6e6;
   text-align: center;
   padding: 20px;
+  position: relative; /* Important for button positioning */
+  overflow: hidden;   /* Prevents buttons from escaping the screen */
 }
 
 .valentine-image {
@@ -25,6 +27,7 @@
   display: flex;
   gap: 20px;
   justify-content: center;
+  position: relative; /* Keeps "No" button within this container */
 }
 
 .yes-button, .no-button {
@@ -48,6 +51,7 @@
 .no-button {
   background-color: #dc3545;
   color: white;
+  transition: transform 0.3s ease; /* Smooth transitions for fun */
 }
 
 .no-button:hover {

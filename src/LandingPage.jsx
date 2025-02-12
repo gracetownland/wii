@@ -2,6 +2,7 @@ import React from 'react';
 import './LandingPage.css';
 import videoBackground from './img/SiyaDwi.mov';
 import NavBar from './NavBar';
+import { Link } from 'react-router-dom';  
 
 function LandingPage() {
   return (
@@ -13,7 +14,7 @@ function LandingPage() {
       <div className="LandingPage">
         <header className="LandingPage-header">
           <h1>
-            <a href="/valentine" className="siya-link">SIYA</a>  {/* Standard anchor tag */}
+            <Link to="/valentine" className="siya-link">SIYA</Link>  {/* ✅ Use Link instead of <a> */}
             <br />
             DWIVEDI
           </h1>
