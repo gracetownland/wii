@@ -48,7 +48,7 @@ export default function Valentine() {
             alt="Bear Kisses"
             className="valentine-image"
           />
-          <div className="valentine-message">WOOOOOO!!! I love you pookie!! ;))</div>
+          <div className="valentine-message">YAY I LOVE YOU JAANU :))</div>
         </>
       ) : (
         <>
@@ -57,7 +57,7 @@ export default function Valentine() {
             src="https://gifdb.com/images/high/cute-love-bear-roses-ou7zho5oosxnpo6k.gif"
             alt="Cute Love Bear"
           />
-          <h1 className="valentine-heading">Will you be my Valentine?</h1>
+          <h1 className="valentine-heading">Will you be my Valentine wii?</h1>
           <div className="valentine-buttons">
             <button
               className="yes-button"
