@@ -22,6 +22,7 @@ function ContactPage() {
       .then(
         (response) => {
           console.log('SUCCESS!', response.status, response.text);
+          alert("Message Sent Successfully! 🚀"); // Placeholder action
         },
         (err) => {
           console.error('FAILED...', err);
