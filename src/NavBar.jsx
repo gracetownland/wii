@@ -1,9 +1,6 @@
 import React, { useEffect } from 'react';
 import './NavBar.css';
-import gsap from 'gsap';
-import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 
-gsap.registerPlugin(ScrollToPlugin);
 
 function NavBar() {
   useEffect(() => {
@@ -12,11 +9,6 @@ function NavBar() {
       link.addEventListener('click', (event) => {
         event.preventDefault();
         const targetId = event.currentTarget.getAttribute('href');
-        if (targetId.startsWith('#')) {
-          gsap.to(window, { duration: 2.5, scrollTo: targetId });
-        } else {
-          window.location.href = targetId;
-        }
       });
     });
 

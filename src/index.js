@@ -3,11 +3,10 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -29,15 +28,13 @@ function Root() {
         return;
       }
 
-      const scrollAmount = window.innerHeight * direction; // Scroll by the height of the viewport
-      gsap.to(window, { scrollTo: { y: window.scrollY + scrollAmount, autoKill: false }, duration: 2.0, ease: "power1.inOut" });
     };
 
-    window.addEventListener('wheel', handleScroll, { passive: false });
+    window.addEventListener('wheel', handleScroll, { passive: true });
     window.addEventListener('keydown', handleScroll);
 
     return () => {
-      window.removeEventListener('wheel', handleScroll, { passive: false });
+      window.removeEventListener('wheel', handleScroll, { passive: true });
       window.removeEventListener('keydown', handleScroll);
     };
   }, []);
