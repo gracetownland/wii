@@ -13,21 +13,13 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 function Root() {
   useEffect(() => {
     const handleScroll = (event) => {
-      let direction;
       if (event.type === 'wheel') {
-        event.preventDefault();
-        direction = event.deltaY > 0 ? 1 : -1;
+        // Allow default scroll behavior
       } else if (event.type === 'keydown') {
         if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
-          event.preventDefault();
-          direction = event.key === 'ArrowDown' ? 1 : -1;
-        } else {
-          return;
+          // Allow default arrow key behavior
         }
-      } else {
-        return;
       }
-
     };
 
     window.addEventListener('wheel', handleScroll, { passive: true });

@@ -8,13 +8,13 @@ function NavBar() {
     links.forEach(link => {
       link.addEventListener('click', (event) => {
         event.preventDefault();
-        const targetId = event.currentTarget.getAttribute('href');
+        // Navigation handled by default link behavior
       });
     });
 
     return () => {
       links.forEach(link => {
-        link.removeEventListener('click', () => {});
+        link.removeEventListener('click', () => { });
       });
     };
   }, []);

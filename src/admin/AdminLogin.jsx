@@ -11,7 +11,7 @@ function AdminLogin() {
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
     const { login } = useAuth();
-    const { content, loading: contentLoading } = useContent();
+    const { content } = useContent();
     const navigate = useNavigate();
 
     // Use the same video from landing page content if available, else default
