@@ -1,0 +1,296 @@
+/* Admin Styles Refactored to Match Hero Section */
+
+/* Import LandingPage.css if needed, but we replicate key styles here for isolation */
+
+/* Reuse background styles */
+.backgroundContainer {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.backgroundVideo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+/* Overlay Content Wrapper - Sits above video */
+.admin-overlay-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+  /* Allow scrolling for dashboard */
+  background: rgba(0, 0, 0, 0.4);
+  /* Dark overlay to make text readable */
+  color: yellow;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  /* Hero font */
+}
+
+/* Admin Login & Card */
+.admin-login-container {
+  /* This legacy class removed in favor of backgroundContainer structure, 
+     but kept if used inside overlay content */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin-login-card {
+  background: rgba(0, 0, 0, 0.6);
+  /* Darker glass for contrast */
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 0, 0.3);
+  /* Yellow border hint */
+  border-radius: 16px;
+  padding: 40px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+  margin: 10vh auto;
+  /* Center vertically roughly */
+  text-align: center;
+}
+
+.admin-login-card h1 {
+  color: yellow;
+  font-size: 2.5rem;
+  font-weight: 100;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Dashboard Styles */
+.admin-dashboard {
+  /* No background here, letting video show through overlay */
+  min-height: 100%;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: rgba(0, 0, 0, 0.6);
+  border-bottom: 1px solid rgba(255, 255, 0, 0.2);
+}
+
+.admin-header h1 {
+  font-size: 2rem;
+  font-weight: 100;
+  color: yellow;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+.admin-header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.admin-user {
+  color: rgba(255, 255, 0, 0.8);
+  font-size: 0.9rem;
+}
+
+.admin-logout-btn {
+  background: rgba(255, 255, 0, 0.1);
+  border: 1px solid rgba(255, 255, 0, 0.4);
+  color: yellow;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  letter-spacing: 1px;
+}
+
+.admin-logout-btn:hover {
+  background: rgba(255, 255, 0, 0.2);
+  box-shadow: 0 0 10px rgba(255, 255, 0, 0.2);
+}
+
+.admin-content {
+  padding: 40px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.admin-section {
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 0, 0.15);
+  border-radius: 16px;
+  padding: 30px;
+  margin-bottom: 30px;
+}
+
+.admin-section h2 {
+  color: yellow;
+  margin-bottom: 25px;
+  font-size: 1.5rem;
+  font-weight: 100;
+  letter-spacing: 1px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 0, 0.15);
+}
+
+/* Form Elements */
+.admin-form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.admin-form-group label {
+  display: block;
+  color: rgba(255, 255, 0, 0.9);
+  margin-bottom: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.admin-form-group input[type="text"],
+.admin-form-group input[type="email"],
+.admin-form-group input[type="password"],
+.admin-form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 0, 0.2);
+  border-radius: 8px;
+  color: yellow;
+  font-size: 1rem;
+  transition: all 0.2s;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.admin-form-group input:focus,
+.admin-form-group textarea:focus {
+  outline: none;
+  border-color: yellow;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 10px rgba(255, 255, 0, 0.1);
+}
+
+.admin-form-group input::placeholder,
+.admin-form-group textarea::placeholder {
+  color: rgba(255, 255, 0, 0.3);
+}
+
+.admin-form-group input[type="file"] {
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px dashed rgba(255, 255, 0, 0.3);
+  border-radius: 8px;
+  cursor: pointer;
+  color: rgba(255, 255, 0, 0.7);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.admin-form-group input[type="file"]:hover {
+  border-color: yellow;
+}
+
+/* Buttons */
+.admin-submit-btn,
+.admin-save-btn {
+  width: 100%;
+  padding: 14px;
+  background: rgba(255, 255, 0, 0.1);
+  border: 1px solid yellow;
+  border-radius: 8px;
+  color: yellow;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+.admin-submit-btn:hover,
+.admin-save-btn:hover {
+  background: yellow;
+  color: black;
+  box-shadow: 0 0 20px rgba(255, 255, 0, 0.4);
+}
+
+.admin-submit-btn:disabled,
+.admin-save-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Messages */
+.admin-error {
+  background: rgba(255, 0, 0, 0.2);
+  border: 1px solid rgba(255, 0, 0, 0.5);
+  color: #ff6b6b;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.admin-message {
+  background: rgba(255, 255, 0, 0.1);
+  border: 1px solid yellow;
+  color: yellow;
+  padding: 12px 40px;
+  text-align: center;
+  margin: 20px auto;
+  max-width: 600px;
+  border-radius: 8px;
+}
+
+.admin-current-file {
+  color: rgba(255, 255, 0, 0.6);
+  font-size: 0.85rem;
+  margin-top: 8px;
+}
+
+.admin-preview-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-top: 10px;
+  border: 1px solid yellow;
+}
+
+/* Loading */
+.admin-loading {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  color: yellow;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(255, 255, 0, 0.2);
+  border-top-color: yellow;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 15px;
+}

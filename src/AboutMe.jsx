@@ -1,9 +1,16 @@
 import React from 'react';
-import './AboutMe.css'; // Create this CSS file for specific styling
-import aboutMe from './img/aboutMe.JPG';
-import portfolio from './img/portfolio.jpg';
+import './AboutMe.css';
+import aboutMeImg from './img/aboutMe.JPG';
+import portfolioImg from './img/portfolio.jpg';
+import { useContent } from './contexts/ContentContext';
 
 function AboutMe() {
+  const { content, loading } = useContent();
+  const about = content.about || {};
+
+  // Default text if nothing in database
+  const defaultBio = "I am an Alumnus of UBC and the owner of Tiny Mango Shop, where I sell handmade jewellery and crocheted items. I love Kathak, Khalid, Coldplay and momos.";
+
   return (
     <div id="AboutMe" className="AboutMe">
       <div className="leftSide">
@@ -18,16 +25,15 @@ function AboutMe() {
           </div>
         </div>
         <div className="leftImage">
-          <img src={aboutMe} alt="pretty siya smiling" />
+          <img src={aboutMeImg} alt="pretty siya smiling" />
         </div>
       </div>
       <div className="rightSide">
         <div>
-          <img src={portfolio} alt="pretty siya smiling" />
+          {/* Use dynamic image if uploaded, else default */}
+          <img src={about.imageUrl || portfolioImg} alt="pretty siya smiling" />
           <p className="bodyText">
-            I am an Alumnus of UBC and the owner of Tiny Mango Shop, where I
-            sell handmade jewellery and crocheted items. I love Kathak,
-            Khalid, Coldplay and momos.
+            {loading ? '...' : (about.bio || defaultBio)}
           </p>
         </div>
       </div>
