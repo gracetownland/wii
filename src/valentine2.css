@@ -1,0 +1,229 @@
+/* Google Fonts for that receipt look */
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap');
+
+.valentine2-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    font-family: 'Courier Prime', monospace;
+    padding: 20px;
+    /* Subtle texture for background */
+    background-image: radial-gradient(#ccc 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.receipt-card {
+    background: white;
+    width: 100%;
+    max-width: 380px;
+    padding: 40px 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+    /* Jagged bottom edge using clip-path or repeating-linear-gradient */
+}
+
+/* Jagged edge effect - pure CSS */
+.receipt-card::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 100%;
+    height: 20px;
+    background:
+        linear-gradient(135deg, transparent 50%, white 50%),
+        linear-gradient(45deg, white 50%, transparent 50%);
+    background-size: 20px 20px;
+    background-repeat: repeat-x;
+}
+
+.receipt-header {
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 2px dashed #333;
+    padding-bottom: 20px;
+}
+
+.receipt-header h2 {
+    font-size: 2rem;
+    margin: 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.receipt-bg-text {
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 5px;
+}
+
+.date-time {
+    font-size: 0.8rem;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.receipt-body {
+    margin-bottom: 30px;
+}
+
+.receipt-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.receipt-item.total {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-top: 20px;
+    border-top: 2px dashed #333;
+    padding-top: 15px;
+}
+
+.item-name {
+    text-transform: uppercase;
+}
+
+.receipt-footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Buttons */
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    /* Stack on mobile, but let's try row for receipt */
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.auth-btn,
+.decline-btn {
+    width: 100%;
+    padding: 15px;
+    font-family: 'Courier Prime', monospace;
+    font-weight: bold;
+    font-size: 1rem;
+    border: 2px solid #333;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-transform: uppercase;
+}
+
+.auth-btn {
+    background-color: #333;
+    color: white;
+}
+
+.auth-btn:hover {
+    background-color: #000;
+    transform: scale(1.02);
+}
+
+.decline-btn {
+    background-color: transparent;
+    color: #333;
+}
+
+.decline-btn:hover {
+    background-color: #f0f0f0;
+}
+
+/* Error Message (Shake) */
+.error-message {
+    color: red;
+    font-size: 0.8rem;
+    margin-top: 10px;
+    font-weight: bold;
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+
+    75% {
+        transform: translateX(-5px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Approved Stamp */
+.approved-stamp {
+    position: fixed;
+    /* Overlay on top */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-15deg) scale(0);
+    border: 5px solid #d32f2f;
+    color: #d32f2f;
+    padding: 20px 40px;
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 10px;
+    opacity: 0;
+    animation: stamp-in 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    z-index: 100;
+    background-color: rgba(255, 255, 255, 0.9);
+    pointer-events: none;
+}
+
+@keyframes stamp-in {
+    to {
+        transform: translate(-50%, -50%) rotate(-15deg) scale(1);
+        opacity: 1;
+    }
+}
+
+.success-message {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #d32f2f;
+}
+
+.barcode {
+    font-family: 'Libre Barcode 39 Text', cursive;
+    /* Fallback if not loaded */
+    font-size: 3rem;
+    margin-top: 20px;
+    opacity: 0.7;
+}
+
+.movie-link {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 2px solid #007bff;
+    transition: all 0.3s;
+}
+
+.movie-link:hover {
+    color: #0056b3;
+    border-bottom-color: #0056b3;
+    background-color: rgba(0, 123, 255, 0.1);
+}
+
+.date-link {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 1rem;
+}

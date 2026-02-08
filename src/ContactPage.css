@@ -1,17 +1,29 @@
 .backgroundImage {
-  position: relative; /* Required for positioning the overlay */
-  height: 100vh; /* Full viewport height */
-  width: 100vw; /* Full width */
-  background-size: cover; /* Ensure the background image covers the container */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Prevent tiling */
+  position: relative;
+  min-height: 100vh;
+  /* Allow it to grow if content is tall */
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; /* Push content to the bottom */
-  align-items: flex-start; /* Align content to the left */
+  justify-content: flex-end;
+  /* Keep content at bottom */
+  align-items: flex-start;
   color: white;
-  padding: 60px; /* Increase padding for spacing from edges */
-  box-sizing: border-box; /* Include padding in size calculations */
+  padding: 20px;
+  /* Reduced padding for mobile */
+  padding-bottom: 40px;
+  /* Extra bottom padding for scroll/safe area */
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .backgroundImage {
+    padding: 60px;
+    height: 100vh;
+  }
 }
 
 .backgroundImage::before {
@@ -21,107 +33,125 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)); /* Linear gradient overlay */
-  z-index: 1; /* Ensure the overlay is above the background image but below the content */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+  z-index: 1;
 }
 
 .titleCard {
-  font-size: 4em; /* Larger title font size */
+  font-size: 3em;
+  /* Reduced for mobile */
   font-family: 'Kage';
   color: yellow;
   font-weight: bold;
-  margin-bottom: 40px; /* More space between title and form */
-  text-align: left; /* Align text to the left */
-  position: relative; /* Ensure content is above the overlay */
-  z-index: 2; /* Ensure content is above the overlay */
+  margin-bottom: 25px;
+  text-align: left;
+  position: relative;
+  z-index: 2;
 }
 
 @media (min-width: 768px) {
   .titleCard {
-    font-size: 6em; /* Larger title on medium screens */
+    font-size: 6em;
+    margin-bottom: 40px;
   }
 }
 
 .contactForm {
   display: flex;
-  flex-direction: column; /* Stack items vertically */
-  align-items: flex-start; /* Align items to the left */
-  width: 100%; /* Take up full width */
-  max-width: 700px; /* Increase form width */
-  position: relative; /* Ensure content is above the overlay */
-  z-index: 2; /* Ensure content is above the overlay */
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 700px;
+  position: relative;
+  z-index: 2;
 }
 
 .formRow {
-  width: 100%; /* Each row takes up full width of the form */
-  margin-bottom: 20px; /* Add spacing between rows */
+  width: 100%;
+  margin-bottom: 15px;
+  /* Slightly tighter on mobile */
 }
 
 .formLabel {
-  font-size: 1.5em; /* Larger label font size */
+  font-size: 1.2em;
+  /* Reduced for mobile */
   color: yellow;
-  margin-bottom: 10px; /* Space between label and input */
+  margin-bottom: 8px;
+  display: block;
+  /* Ensure it's on its own line */
 }
 
 .formInput {
-  width: 100%; /* Input takes full width of the form */
-  padding: 10px 0; /* Increase padding for better appearance */
-  font-size: 1.2em; /* Increase input font size */
-  border: none; /* Remove border */
-  border-bottom: 2px solid white; /* Add bottom border */
-  background: transparent; /* Transparent background */
-  color: yellow; /* Text color */
-  box-sizing: border-box; /* Include padding and border in width calculations */
-  transition: border-color 0.3s ease; /* Smooth transition for hover effects */
+  width: 100%;
+  padding: 8px 0;
+  font-size: 1em;
+  border: none;
+  border-bottom: 2px solid white;
+  background: transparent;
+  color: yellow;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
 }
 
 .formInput:focus {
-  border-bottom: 2px solid yellow; /* Change bottom border color on focus */
-  outline: none; /* Remove default outline */
+  border-bottom: 2px solid yellow;
+  outline: none;
 }
 
 .formTextarea {
-  width: 100%; /* Input takes full width of the form */
-  padding: 15px; /* Increase padding for better appearance */
-  font-size: 1.2em; /* Increase input font size */
-  border: 2px solid white; /* Add border */
-  background: transparent; /* Transparent background */
-  color: yellow; /* Text color */
-  border-radius: 5px; /* Rounded corners */
-  box-sizing: border-box; /* Include padding and border in width calculations */
-  transition: border-color 0.3s ease; /* Smooth transition for hover effects */
-  height: 100px; /* Initial height */
-  resize: vertical; /* Allow vertical resizing */
-  overflow: hidden; /* Hide overflow */
+  width: 100%;
+  padding: 12px;
+  font-size: 1em;
+  border: 2px solid white;
+  background: transparent;
+  color: yellow;
+  border-radius: 5px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+  height: 120px;
+  /* Slightly taller default */
+  resize: vertical;
+  overflow: hidden;
 }
 
 .formTextarea:focus {
-  border-color: yellow; /* Change border color on focus */
-  outline: none; /* Remove default outline */
+  border-color: yellow;
+  outline: none;
 }
 
 .submitButton {
-  width: auto; /* Button size based on content */
-  padding: 15px 30px; /* Add more padding */
-  font-size: 1.2em; /* Increase button font size */
+  width: 100%;
+  /* Full width button on mobile for easier tapping */
+  padding: 15px;
+  font-size: 1.2em;
   color: black;
-  background-color: yellow; /* Button color */
+  background-color: yellow;
   border: none;
-  border-radius: 10px; /* More rounded corners */
+  border-radius: 10px;
   cursor: pointer;
-  margin-top: 20px; /* Add spacing above the button */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  transition: background 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+  margin-top: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .submitButton {
+    width: auto;
+    padding: 15px 30px;
+  }
 }
 
 .submitButton:hover {
   background-color: white;
   color: black;
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Slightly larger shadow on hover */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
 
 .titleCard a {
-  text-decoration: none; /* Remove underline */
-  color: yellow; /* Ensure the text color matches your design */
-  outline: none; /* Remove the focus outline */
+  text-decoration: none;
+  /* Remove underline */
+  color: yellow;
+  /* Ensure the text color matches your design */
+  outline: none;
+  /* Remove the focus outline */
 }

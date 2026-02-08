@@ -1,60 +1,89 @@
 .NavBar {
   display: flex;
-  justify-content: center; /* Center the items horizontally */
-  align-items: center; /* Align the items vertically */
-  gap: 10px; /* Add space between the items */
-  font-family: 'Playfair Display', serif; /* Elegant font */
-  font-size: 1rem; /* Text size */
-  font-weight: 400; /* Moderate font weight */
-  text-transform: uppercase; /* Uppercase text for clean look */
-  letter-spacing: 1px; /* Add spacing between letters */
-  color: yellow; /* Yellow color matching the design */
+  justify-content: center;
+  /* Center the items horizontally */
+  align-items: center;
+  /* Align the items vertically */
+  gap: 10px;
+  /* Add space between the items */
+  font-family: 'Playfair Display', serif;
+  /* Elegant font */
+  font-size: 1rem;
+  /* Text size */
+  font-weight: 400;
+  /* Moderate font weight */
+  text-transform: uppercase;
+  /* Uppercase text for clean look */
+  letter-spacing: 1px;
+  /* Add spacing between letters */
+  color: yellow;
+  /* Yellow color matching the design */
   scroll-behavior: smooth;
-  padding: 10px; /* Add padding for better spacing */
+  padding: 10px;
+  /* Add padding for better spacing */
 }
 
 @media (min-width: 768px) {
   .NavBar {
-    gap: 20px; /* Increase gap between items on medium screens */
-    font-size: 1.2rem; /* Increase font size on medium screens */
-    letter-spacing: 2px; /* Increase letter spacing on medium screens */
+    gap: 20px;
+    /* Increase gap between items on medium screens */
+    font-size: 1.2rem;
+    /* Increase font size on medium screens */
+    letter-spacing: 2px;
+    /* Increase letter spacing on medium screens */
   }
 }
 
 .nava {
-  text-decoration: none; /* Remove underline from links */
-  color: yellow; /* Yellow color for text */
-  position: relative; /* Required for pseudo-elements */
-  padding: 0 10px; /* Add padding for spacing around lines */
-  transition: color 0.3s ease, transform 0.3s ease; /* Smooth hover effects */
+  text-decoration: none;
+  /* Remove underline from links */
+  color: yellow;
+  /* Yellow color for text */
+  position: relative;
+  /* Required for pseudo-elements */
+  padding: 0 10px;
+  /* Add padding for spacing around lines */
+  transition: color 0.3s ease, transform 0.3s ease;
+  /* Smooth hover effects */
 }
 
 .nava::after {
-  content: "|"; /* Vertical line as separator */
+  content: "|";
+  /* Vertical line as separator */
   position: absolute;
-  right: -15px; /* Position the line slightly outside */
-  color: #ffd700; /* Yellow color for line */
+  right: -15px;
+  /* Position the line slightly outside */
+  color: #ffd700;
+  /* Yellow color for line */
 }
 
 .nava:last-child::after {
-  content: ""; /* Remove the line after the last link */
+  content: "";
+  /* Remove the line after the last link */
 }
 
 .nava:hover {
-  color: #ffffff; /* Change color to white on hover */
-  transform: scale(1.1); /* Slightly enlarge text on hover */
+  color: #ffffff;
+  /* Change color to white on hover */
+  transform: scale(1.1);
+  /* Slightly enlarge text on hover */
 }
 
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
   .NavBar {
-    flex-direction: column; /* Stack items vertically on small screens */
-    gap: 10px; /* Reduce gap between items on small screens */
-    font-size: 1rem; /* Adjust font size for small screens */
-    letter-spacing: 1px; /* Adjust letter spacing for small screens */
+    flex-direction: column;
+    /* Stack items vertically on small screens */
+    gap: 15px;
+    /* Slightly more space for touch targets */
+    font-size: 0.9rem;
+    /* Adjust font size ensuring it fits */
+    letter-spacing: 1px;
+    padding-bottom: 20px;
   }
 
   .nava::after {
-    right: -10px; /* Adjust position of the line on small screens */
+    content: none;
+    /* Remove separators on mobile for cleaner stack */
   }
 }

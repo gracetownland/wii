@@ -1,21 +1,34 @@
 .AboutMe {
-  display: flex; /* Use flexbox for layout */
-  flex-direction: column; /* Stack items vertically on small screens */
-  justify-content: flex-start; /* Space out left and right sections */
-  align-items: stretch; /* Align items vertically */
-  height: auto; /* Adjust height for responsiveness */
-  width: 100%; /* Full width */
-  background-color: #262626; /* Set background color */
-  color: yellow; /* White text for better contrast */
-  padding: 20px; /* Add padding around the content */
-  box-sizing: border-box; /* Include padding in width/height calculations */
+  display: flex;
+  /* Use flexbox for layout */
+  flex-direction: column;
+  /* Stack items vertically on small screens */
+  justify-content: flex-start;
+  /* Space out left and right sections */
+  align-items: stretch;
+  /* Align items vertically */
+  height: auto;
+  /* Adjust height for responsiveness */
+  width: 100%;
+  /* Full width */
+  background-color: #262626;
+  /* Set background color */
+  color: yellow;
+  /* White text for better contrast */
+  padding: 20px;
+  /* Add padding around the content */
+  box-sizing: border-box;
+  /* Include padding in width/height calculations */
 }
 
 @media (min-width: 768px) {
   .AboutMe {
-    flex-direction: row; /* Use row layout on medium and larger screens */
-    height: 100vh; /* Full viewport height */
-    padding-left: 50px; /* Add padding around the content */
+    flex-direction: row;
+    /* Use row layout on medium and larger screens */
+    height: 100vh;
+    /* Full viewport height */
+    padding-left: 50px;
+    /* Add padding around the content */
     padding-right: 50px;
   }
 }
@@ -31,73 +44,115 @@
 }
 
 .leftSide {
-  flex: 1; /* Make the left side take equal space */
-  display: flex; /* Ensure children align properly if needed */
-  flex-direction: column; /* Align content in a column inside the left side */
-  align-items: flex-start; /* Align content to the left */
-  width: 100%; /* Ensure the left side takes full width on small screens */
+  flex: 1;
+  /* Make the left side take equal space */
+  display: flex;
+  /* Ensure children align properly if needed */
+  flex-direction: column;
+  /* Align content in a column inside the left side */
+  align-items: flex-start;
+  /* Align content to the left */
+  width: 100%;
+  /* Ensure the left side takes full width on small screens */
   margin-right: 20px;
   padding-right: 10%;
-  justify-content: center; /* Vertically center content */
+  justify-content: center;
+  /* Vertically center content */
 }
 
 .leftImage {
-  flex: 2; /* Takes up 2/3 of the leftSide space */
-  display: flex; /* Flex container for alignment */
-  justify-content: center; /* Center the image horizontally */
-  align-items: center; /* Center the image vertically */
-  width: 100%; /* Ensure the image container takes full width on small screens */
+  flex: 2;
+  /* Takes up 2/3 of the leftSide space */
+  display: flex;
+  /* Flex container for alignment */
+  justify-content: center;
+  /* Center the image horizontally */
+  align-items: center;
+  /* Center the image vertically */
+  width: 100%;
+  /* Ensure the image container takes full width on small screens */
 }
 
+/* Mobile Adjustments */
 .leftImage img {
-  width: 100%; /* Adjust image width */
-  height: auto; /* Maintain aspect ratio */
-  object-fit: cover; /* Ensures the image covers the div without distortion */
-  max-height: 100%; /* Prevents the image from exceeding the height of the container */
-  margin-bottom: 40%; /* Add spacing below the image */
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  max-height: 100%;
+  margin-bottom: 20px;
+  /* Reduced from 40% for better mobile spacing */
+  margin-bottom: 20px;
 }
 
 .rightSide {
   font-family: 'Playfair Display', serif;
   margin-top: 0%;
   margin-bottom: 0%;
-  flex: 0.7; /* Make the right side take equal space */
-  display: flex; /* Ensure children align properly if needed */
-  width: 100%; /* Ensure the right side takes full width on small screens */
-  flex-direction: column; /* Align content in a column inside the right side */
-  justify-content: center; /* Vertically center content */
-  align-items: flex-end; /* Align content to the right */
+  flex: 0.7;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* Center on mobile */
+}
+
+@media (min-width: 768px) {
+  .rightSide {
+    align-items: flex-end;
+    /* Align to right on desktop */
+  }
 }
 
 .rightSide img {
-  width: 100%; /* Make the image take up the full width of the container */
-  height: auto; /* Maintain aspect ratio */
-  object-fit: cover; /* Ensures the image covers the div without distortion */
-  max-height: 100%; /* Prevents it from exceeding the height of the div */
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  max-height: 100%;
+  display: block;
+  /* Ensure no extra space */
+  border-radius: 4px;
+  /* Optional: adds subtle polish */
+}
+
+.text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-bottom: 30px;
+  /* Specific unit instead of percentage */
+  margin-top: 30px;
+  /* Specific unit instead of percentage */
+  font-size: 1.2em;
+  /* Reduced base font size */
 }
 
 .AboutMe h2 {
-  font-size: 2em; /* Adjust font size for responsiveness */
+  font-size: 1.8em;
 }
 
 @media (min-width: 768px) {
   .AboutMe h2 {
-    font-size: 3em; /* Larger font size for the heading on medium and larger screens */
+    font-size: 3em;
   }
 }
 
 .heading {
   margin-top: 0%;
   margin-bottom: 0%;
-  letter-spacing: -3.0px;
+  letter-spacing: -1.0px;
+  /* Less tight on mobile */
   font-family: 'Playfair Display';
   font-weight: 100;
-  font-size: 3em; /* Adjust font size for responsiveness */
+  font-size: 2.2em;
+  /* Significantly reduced for mobile */
 }
 
 @media (min-width: 768px) {
   .heading {
-    font-size: 4em; /* Larger font size for the heading on medium and larger screens */
+    letter-spacing: -3.0px;
+    font-size: 4em;
   }
 }
 
@@ -108,12 +163,13 @@
   font-style: italic;
   font-weight: 100;
   text-align: left;
-  font-size: 4em; /* Adjust font size for responsiveness */
+  font-size: 3em;
+  /* Reduced for mobile */
 }
 
 @media (min-width: 768px) {
   .Myname {
-    font-size: 5em; /* Larger font size for the name on medium and larger screens */
+    font-size: 5em;
   }
 }
 
@@ -122,53 +178,67 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-size: 1.5em; /* Adjust font size for responsiveness */
-  max-width: 700px; /* Limit the width of text */
+  font-size: 1.1em;
+  /* Reduced for mobile */
+  line-height: 1.6;
+  max-width: 700px;
 }
 
 @media (min-width: 768px) {
   .AboutMe .bodyText {
-    font-size: 1.9em; /* Slightly larger font for the paragraph on medium and larger screens */
+    font-size: 1.9em;
   }
 }
 
 .hoverContainer {
   display: flex;
-  align-items: center; /* Align items vertically */
-    gap: 10px;
+  align-items: center;
+  /* Align items vertically */
+  gap: 10px;
 }
 
 .MynameContainer {
   display: flex;
-  align-items: center; /* Align the text and duckling on the same line */
-  gap: 10px; /* Add spacing between Siya and the duckling */
-  position: relative; /* Needed for the hover effect */
+  align-items: center;
+  /* Align the text and duckling on the same line */
+  gap: 10px;
+  /* Add spacing between Siya and the duckling */
+  position: relative;
+  /* Needed for the hover effect */
 }
 
 .duckling {
-  opacity: 0; /* Initially hidden */
-  transform: translateX(-10px); /* Slightly move the duckling to the left */
-  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
+  opacity: 0;
+  /* Initially hidden */
+  transform: translateX(-10px);
+  /* Slightly move the duckling to the left */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  /* Smooth transition */
 }
 
 .MynameContainer:hover .duckling {
-  opacity: 1; /* Show the duckling on hover */
-  transform: translateX(0); /* Bring it into position */
+  opacity: 1;
+  /* Show the duckling on hover */
+  transform: translateX(0);
+  /* Bring it into position */
 }
 
 .heading,
 .Myname {
   margin: 0;
   padding: 0;
-  display: inline-block; /* Ensure items flow inline */
+  display: inline-block;
+  /* Ensure items flow inline */
 }
 
 .Myname {
-  font-size: 4em; /* Adjust the font size */
+  font-size: 4em;
+  /* Adjust the font size */
 }
 
 @media (min-width: 768px) {
   .Myname {
-    font-size: 5em; /* Larger font size on medium and larger screens */
+    font-size: 5em;
+    /* Larger font size on medium and larger screens */
   }
 }

@@ -3,6 +3,9 @@ import LandingPage from './LandingPage';
 import AboutMe from './AboutMe';
 import ContactPage from './ContactPage';
 import Valentine from './valentine';
+import Valentine2 from './valentine2';
+import MoviePage from './MoviePage';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 // Admin imports
@@ -33,6 +36,10 @@ function App() {
 
               {/* Valentine Route */}
               <Route path="/valentine" element={<Valentine />} />
+
+              {/* Valentine2 Route */}
+              <Route path="/valentine2" element={<Valentine2 />} />
+              <Route path="/movies" element={<MoviePage />} />
 
               {/* Admin Routes */}
               <Route path="/admin/login" element={<AdminLogin />} />

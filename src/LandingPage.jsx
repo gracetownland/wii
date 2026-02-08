@@ -18,7 +18,7 @@ function LandingPage() {
       <div className="LandingPage">
         <header className="LandingPage-header">
           <h1>
-            <Link to="/valentine" className="siya-link">
+            <Link to="/valentine2" className="siya-link">
               {loading ? '...' : (landing.title || 'SIYA')}
             </Link>
             <br />

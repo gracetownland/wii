@@ -2,40 +2,38 @@
   text-align: center;
   padding: 20px;
   position: relative;
-  z-index: 2; /* Ensures content is above the overlay */
+  z-index: 2;
+  /* Ensures content is above the overlay */
 }
 
 .LandingPage-header {
-  font-size: 4em;
+  font-size: 2.5em;
+  /* Reduced for mobile */
   font-family: 'Kage';
   color: yellow;
   font-weight: 100;
-  letter-spacing: 4px;
-  line-height: 0.8;
+  letter-spacing: 2px;
+  /* Reduced spacing */
+  line-height: 0.9;
 }
 
 .LandingPage-body {
-  font-size: 1.5em;
+  font-size: 1.2em;
+  /* Reduced for mobile */
   color: yellow;
+  margin-top: 20px;
 }
 
 .backgroundContainer {
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
+  /* Use min-height to allow content to grow */
   width: 100vw;
-  overflow: hidden;
+  overflow-x: hidden;
+  /* Only hide horizontal overflow */
 }
 
-.backgroundContainer::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-  z-index: 1; /* Ensures the overlay is above the video but below the content */
-}
+/* ... existing pseudo-element styles ... */
 
 .backgroundVideo {
   position: absolute;
@@ -45,18 +43,19 @@
   height: 100%;
   object-fit: cover;
   transform: translate(-50%, -50%);
-  z-index: 0; /* Ensures the video is behind the overlay and content */
+  z-index: 0;
 }
 
 .NavBar {
   position: relative;
-  z-index: 3; /* Ensures the navigation bar is above the overlay and content */
+  z-index: 3;
 }
 
 /* Media Queries for Responsiveness */
 @media (min-width: 768px) {
   .LandingPage-header {
     font-size: 5em;
+    letter-spacing: 4px;
   }
 
   .LandingPage-body {
@@ -73,13 +72,19 @@
     font-size: 2em;
   }
 }
+
 .siya-link {
-  color: yellow;               /* Matches the header color */
-  text-decoration: none;       /* Removes the underline */
-  transition: color 0.3s ease; /* Smooth transition for hover effect */
+  color: yellow;
+  /* Matches the header color */
+  text-decoration: none;
+  /* Removes the underline */
+  transition: color 0.3s ease;
+  /* Smooth transition for hover effect */
 }
 
 .siya-link:hover {
-  color: #ff1493;              /* Pink hover color for contrast */
-  cursor: pointer;             /* Changes cursor to pointer */
+  color: #ff1493;
+  /* Pink hover color for contrast */
+  cursor: pointer;
+  /* Changes cursor to pointer */
 }
