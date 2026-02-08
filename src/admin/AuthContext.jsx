@@ -3,7 +3,8 @@ import { auth } from '../firebase';
 import {
     signInWithEmailAndPassword,
     signOut,
-    onAuthStateChanged
+    onAuthStateChanged,
+    sendPasswordResetEmail
 } from 'firebase/auth';
 
 const AuthContext = createContext();
@@ -39,8 +40,17 @@ export function AuthProvider({ children }) {
         }
     };
 
+    const resetPassword = async (email) => {
+        try {
+            await sendPasswordResetEmail(auth, email);
+            return { success: true };
+        } catch (error) {
+            return { success: false, error: error.message };
+        }
+    };
+
     return (
-        <AuthContext.Provider value={{ user, loading, login, logout }}>
+        <AuthContext.Provider value={{ user, loading, login, logout, resetPassword }}>
             {children}
         </AuthContext.Provider>
     );
