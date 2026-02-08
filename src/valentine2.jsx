@@ -1,13 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import './valentine2.css';
 
 const Valentine2 = () => {
     const [isPaid, setIsPaid] = useState(false);
     const [declineCount, setDeclineCount] = useState(0);
     const [errorMsg, setErrorMsg] = useState('');
+    const [buttonPos, setButtonPos] = useState({ x: 0, y: 0 });
+    const [buttonScale, setButtonScale] = useState(1);
+    const buttonRef = useRef(null);
 
     const handleAuthorize = () => {
         setIsPaid(true);
+        setTimeout(() => {
+            window.location.href = '/movies';
+        }, 2000);
     };
 
     const handleDecline = () => {
@@ -20,9 +26,57 @@ const Valentine2 = () => {
             "WARNING: CUTE AGGRESSION IMMINENT",
             "TRY AGAIN... OR ELSE :)"
         ];
-        // Cycle through errors or pick random
         setErrorMsg(errors[declineCount % errors.length]);
     };
+
+    const handleMouseMove = (e) => {
+        if (!buttonRef.current || isPaid) return;
+
+        const button = buttonRef.current;
+        const rect = button.getBoundingClientRect();
+
+        // Button center is already where the button visually is (transform is applied)
+        const buttonCenterX = rect.left + rect.width / 2;
+        const buttonCenterY = rect.top + rect.height / 2;
+
+        const distance = Math.sqrt(
+            Math.pow(e.clientX - buttonCenterX, 2) +
+            Math.pow(e.clientY - buttonCenterY, 2)
+        );
+
+        // Shrink when getting close (within 200px)
+        if (distance < 200) {
+            const scale = Math.max(0.4, distance / 200);
+            setButtonScale(scale);
+
+            // Run away when very close (within 100px)
+            if (distance < 100) {
+                const angle = Math.atan2(buttonCenterY - e.clientY, buttonCenterX - e.clientX);
+                const moveDistance = 80 + Math.random() * 40;
+
+                setButtonPos(prev => {
+                    const newX = prev.x + Math.cos(angle) * moveDistance;
+                    const newY = prev.y + Math.sin(angle) * moveDistance;
+
+                    // Keep within bounds
+                    const maxX = 200;
+                    const maxY = 150;
+                    return {
+                        x: Math.max(-maxX, Math.min(maxX, newX)),
+                        y: Math.max(-maxY, Math.min(maxY, newY))
+                    };
+                });
+            }
+        } else {
+            setButtonScale(1);
+        }
+    };
+
+    useEffect(() => {
+        const throttledHandler = (e) => handleMouseMove(e);
+        window.addEventListener('mousemove', throttledHandler);
+        return () => window.removeEventListener('mousemove', throttledHandler);
+    });
 
     return (
         <div className="valentine2-container">
@@ -75,12 +129,8 @@ const Valentine2 = () => {
                     </div>
 
                     <div className="receipt-item total">
-                        <span className="item-name">TOTAL (CLICK BELOW)</span>
-                        <span className="item-price">YES</span>
-                    </div>
-
-                    <div className="receipt-item date-link">
-                        <a href="/movies" className="movie-link">➡️ 1x VALENTINE DATE (SELECT MOVIE)</a>
+                        <span className="item-name">TOTAL</span>
+                        <span className="item-price">PRICELESS</span>
                     </div>
                 </div>
 
@@ -89,10 +139,18 @@ const Valentine2 = () => {
                         <p>AUTHORIZE TRANSACTION?</p>
                         <div className="action-buttons">
                             <button className="auth-btn" onClick={handleAuthorize}>
-                                AUTHORIZE (YES)
+                                ✅ CONFIRM TRANSACTION
                             </button>
-                            <button className="decline-btn" onClick={handleDecline}>
-                                DECLINE (NO)
+                            <button
+                                ref={buttonRef}
+                                className="decline-btn"
+                                onClick={handleDecline}
+                                style={{
+                                    transform: `translate(${buttonPos.x}px, ${buttonPos.y}px) scale(${buttonScale})`,
+                                    transition: 'transform 0.15s ease-out'
+                                }}
+                            >
+                                DECLINE
                             </button>
                         </div>
                         {errorMsg && <div className="error-message">{errorMsg}</div>}
@@ -100,8 +158,7 @@ const Valentine2 = () => {
                 ) : (
                     <div className="receipt-footer">
                         <div className="success-message">
-                            <p>TRANSACTION APPROVED</p>
-                            <p>See you on the 14th! ❤️</p>
+                            <p>TRANSACTION APPROVED ❤️</p>
                         </div>
                         <div className="barcode">||||| |||| || |||||</div>
                     </div>

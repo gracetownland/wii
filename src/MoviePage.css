@@ -7,6 +7,11 @@
     overflow-x: hidden;
 }
 
+/* Lock body scroll when modal is open */
+body:has(.modal-overlay) {
+    overflow: hidden !important;
+}
+
 /* Hide all scrollbars */
 .movie-page::-webkit-scrollbar,
 .row-posters::-webkit-scrollbar {
@@ -201,16 +206,14 @@
 /* Modal */
 .modal-overlay {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
     background: rgba(0, 0, 0, 0);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 100;
     animation: fadeInOverlay 0.4s ease-out forwards;
+    overflow: hidden;
 }
 
 @keyframes fadeInOverlay {
@@ -246,6 +249,8 @@
     text-align: center;
     max-width: 850px;
     width: 95%;
+    max-height: 90vh;
+    overflow-y: auto;
     position: relative;
     box-shadow:
         0 0 0 1px rgba(255, 255, 255, 0.1),
@@ -421,15 +426,14 @@
 /* Movie Info in Modal */
 .movie-info {
     display: flex;
-    gap: 30px;
-    margin-bottom: 25px;
+    gap: 25px;
+    margin-bottom: 20px;
     text-align: left;
     align-items: flex-start;
 }
 
 .modal-poster {
-    width: 250px;
-    min-width: 250px;
+    width: 200px;
     height: auto;
     border-radius: 8px;
     flex-shrink: 0;
@@ -438,7 +442,35 @@
 
 .movie-meta {
     flex: 1;
-    padding-top: 10px;
+}
+
+.movie-meta .modal-title {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+}
+
+.movie-year {
+    font-size: 0.95rem;
+    color: #aaa;
+    margin-bottom: 6px;
+}
+
+.movie-rating {
+    font-size: 1rem;
+    color: #ffc107;
+    margin-bottom: 10px;
+}
+
+.movie-plot {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #ddd;
+    margin-bottom: 10px;
+}
+
+.movie-genre {
+    font-size: 0.9rem;
+    color: #888;
 }
 
 .movie-meta .modal-title {

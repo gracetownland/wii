@@ -95,6 +95,18 @@ const MoviePage = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    // Lock body scroll when modal is open
+    useEffect(() => {
+        if (selectedMovie) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+        return () => {
+            document.body.style.overflow = '';
+        };
+    }, [selectedMovie]);
+
     // Fetch posters for all movies on mount
     useEffect(() => {
         const fetchAllPosters = async () => {

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const MovieModal = ({
     movie,
@@ -11,6 +11,14 @@ const MovieModal = ({
     const [selectedDate, setSelectedDate] = useState('');
     const [selectedTime, setSelectedTime] = useState('');
     const [showConfirmation, setShowConfirmation] = useState(false);
+
+    // Disable body scroll when modal is open
+    useEffect(() => {
+        document.body.style.overflow = 'hidden';
+        return () => {
+            document.body.style.overflow = 'unset';
+        };
+    }, []);
 
     const handleClose = () => {
         setIsClosing(true);
