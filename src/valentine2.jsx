@@ -7,22 +7,7 @@ const Valentine2 = () => {
     const [errorMsg, setErrorMsg] = useState('');
     const [buttonPos, setButtonPos] = useState({ x: 0, y: 0 });
     const [buttonScale, setButtonScale] = useState(1);
-    const [goodbyeMsg, setGoodbyeMsg] = useState('');
-    const [showGoodbye, setShowGoodbye] = useState(false);
     const buttonRef = useRef(null);
-
-    const goodbyeMessages = [
-        "BYE BYE! 👋",
-        "CAN'T CATCH ME!",
-        "NOPE! 🏃‍♂️",
-        "TOO SLOW!",
-        "NICE TRY! 😜",
-        "NOT TODAY!",
-        "HAHA MISSED ME!",
-        "WHEEE! 🎢",
-        "SEE YA! ✌️",
-        "CATCH ME IF U CAN!"
-    ];
 
     const handleAuthorize = () => {
         setIsPaid(true);
@@ -73,20 +58,14 @@ const Valentine2 = () => {
                     const newX = prev.x + Math.cos(angle) * moveDistance;
                     const newY = prev.y + Math.sin(angle) * moveDistance;
 
-                    // Keep within bounds
-                    const maxX = 200;
-                    const maxY = 150;
+                    // Keep within page bounds (can go sideways but limited up/down)
+                    const maxX = 300;
+                    const maxY = 80;
                     return {
                         x: Math.max(-maxX, Math.min(maxX, newX)),
-                        y: Math.max(-maxY, Math.min(maxY, newY))
+                        y: Math.max(-100, Math.min(maxY, newY))
                     };
                 });
-
-                // Show goodbye message
-                const randomMsg = goodbyeMessages[Math.floor(Math.random() * goodbyeMessages.length)];
-                setGoodbyeMsg(randomMsg);
-                setShowGoodbye(true);
-                setTimeout(() => setShowGoodbye(false), 800);
             }
         } else {
             setButtonScale(1);
@@ -172,9 +151,6 @@ const Valentine2 = () => {
                                 }}
                             >
                                 DECLINE
-                                {showGoodbye && (
-                                    <span className="goodbye-msg">{goodbyeMsg}</span>
-                                )}
                             </button>
                         </div>
                         {errorMsg && <div className="error-message">{errorMsg}</div>}
