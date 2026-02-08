@@ -129,10 +129,49 @@
 .decline-btn {
     background-color: transparent;
     color: #333;
+    position: relative;
 }
 
 .decline-btn:hover {
     background-color: #f0f0f0;
+}
+
+/* Goodbye message popup */
+.goodbye-msg {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ff6b6b;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    white-space: nowrap;
+    animation: popUp 0.8s ease-out forwards;
+    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.4);
+}
+
+@keyframes popUp {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(10px) scale(0.5);
+    }
+
+    20% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(-5px) scale(1.1);
+    }
+
+    40% {
+        transform: translateX(-50%) translateY(0) scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-20px) scale(0.8);
+    }
 }
 
 /* Error Message (Shake) */
