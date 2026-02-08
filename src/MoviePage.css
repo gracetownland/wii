@@ -29,7 +29,7 @@ body:has(.modal-overlay) {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: transparent;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
     position: fixed;
     top: 0;
     left: 0;
@@ -56,10 +56,11 @@ body:has(.modal-overlay) {
 }
 
 .nav-item {
-    color: #e5e5e5;
+    color: #fff;
     font-size: 1.1rem;
     cursor: pointer;
     transition: color 0.2s;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
 }
 
 .nav-item:hover {
